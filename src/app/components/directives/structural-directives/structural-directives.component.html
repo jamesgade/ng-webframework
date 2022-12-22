@@ -1,0 +1,21 @@
+<!-- ngIf -->
+<h4 *ngIf="true">Example of ngIf directive when true directly</h4>
+<h4 *ngIf="hideElement">Example of ngIf directive when true from ts</h4>
+<h4 *ngIf="false">Example of ngIf directive when false directly</h4>
+<h4 *ngIf="showElement">Example of ngIf directive when false from ts</h4>
+
+<!-- ngFor -->
+<h2>ngFor example</h2>
+<div *ngFor="let person of people; let i = index">
+    <span>{{i + 1}} </span>
+    <span>{{person.name}} </span>
+    <small>{{person.age}}</small>
+</div>
+
+<!-- ngSwitch -->
+<h2>ngSwitch example</h2>
+<div [ngSwitch]="me.name">
+    <div *ngSwitchCase="'James'">My name is {{me.name}}</div>
+    <div *ngSwitchCase="'Sujai'">My name is {{me.name}}</div>
+    <div *ngSwitchDefault>No names found</div>
+</div>

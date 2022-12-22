@@ -1,0 +1,111 @@
+<!-- property binding -->
+
+<img [src]="imgUrl" alt="image">
+<img src="{{imgUrl}}" alt="img">
+
+<button [disabled]="inactive">Click me: Property binding</button>
+
+
+
+
+<br><br><br><br><br>
+
+
+
+
+
+<!-- attribute binding -->
+<!-- <p [attr.attribute-you-are-targeting]="expression">Attribute Binding</p> -->
+<!-- colspan: attribute
+     colSpan: property -->
+<table>
+    <tr>
+        <td [attr.colspan]="1 + 1">attribute binding</td>
+    </tr>
+</table>
+
+
+
+
+<br><br><br><br><br>
+
+
+
+
+
+<!-- class binding -->
+
+<!-- for single class -->
+<div [class.sale]="onSale">Single class binding</div>
+
+<!-- for multiple classes -->
+<!-- string of class names -->
+<div [class]="'one two three'">String of class names</div>
+<!-- object of class names -->
+<div [class]="{
+    one: true,
+    two: false,
+    three: true
+}">Object of class names: binds if the value is true</div>
+<!-- array of class names -->
+<div [class]="['one', 'two', 'three']">Array of class names: binds of the value is true</div>
+
+
+
+
+
+<br><br><br><br><br>
+
+
+
+
+<!-- style binding -->
+<div [style.color]="'red'">Single style binding</div>
+<div [style.display]="showElement">Hidden</div>
+
+<div [style.background-color]="'red'">Style binding with -  seperation</div>
+<div [style.backgroundColor]="'green'">style binding with camel case</div>
+
+
+<div [style]="'font-size: 32px; color: blue;'">Multiple styles binding with string</div>
+<div [style]="{width: '100px', height: '100px', background: 'green', color: 'blue'}">Multiple styles binding with object</div>
+
+
+
+<br><br><br><br><br>
+
+
+
+
+<!-- event binding -->
+<p>Event Binding</p>
+<button (click)="onSave()">Save</button>
+<!-- custom event -->
+<p>custom binding</p>
+<app-event-binding (deleteRequest)="deleteItem($event)"></app-event-binding>
+
+
+
+
+<br><br><br><br><br>
+
+
+
+
+
+<!-- two way binding -->
+<p>two way binding</p>
+
+<h4>two-way binding with component interaction</h4>
+<app-two-way-binding [(size)]="fontSizePX"></app-two-way-binding>
+<div [style.font-size.px]="fontSizePX">Resizible text</div>
+<br>
+<app-two-way-binding (size)="fontSizePX" [size]="fontSizePX"></app-two-way-binding>
+
+
+
+
+
+
+<br><br><br><br><br>
+

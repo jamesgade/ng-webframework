@@ -1,0 +1,12 @@
+<!-- ngClass -->
+<h1 [ngClass]="isSpecial ? 'special' : ''">ngClass Example</h1>
+<h1 [ngClass]="currentClasses">ngClass with method</h1>
+<br><br>
+
+<!-- ngStyle -->
+<h1 [ngStyle]="currentStyles">ngStyle example</h1>
+<br><br>
+
+<!-- ngModel -->
+<p>{{name}}</p>
+<input type="text" [(ngModel)]="name">

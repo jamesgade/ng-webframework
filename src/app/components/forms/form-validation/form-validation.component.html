@@ -1,0 +1,24 @@
+<h3>Form validation examples</h3>
+<!-- <p>{{nameInput}}</p> -->
+
+<!-- template driven form validation -->
+<form>
+    <h6>template driven form validation</h6>
+    <input type="text" name="name" required minlength="4" [(ngModel)]="nameInput" #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+        <small *ngIf="name.errors?.['minlength']">Name must be at least 4 characters long.</small>
+    </div>
+</form>
+
+<br><br>
+
+<!-- reactive form validation -->
+<form [formGroup]="validationForm">
+    <h6>reactive form validation</h6>
+    <input type="text" id="name" minlength="4" formControlName="name" required>
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <small *ngIf="name?.errors?.['required']">Name is required.</small>
+        <small *ngIf="name?.errors?.['minlength']">Name must be at least 4 characters long.</small>
+    </div>
+</form>

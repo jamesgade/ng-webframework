@@ -1,0 +1,25 @@
+<h3>Temaplate Driven Form Example</h3>
+<!-- <p>{{model | json}}</p> -->
+
+<div [hidden]="submitted">
+    <form #tdForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" required [(ngModel)]="model.name" name="name">
+        </div>
+        <div>
+            <label for="specie">Specie</label>
+            <select id="specie" required [(ngModel)]="model.specie" name="specie ">
+                <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+            </select>
+        </div>
+        <button [disabled]="!tdForm.form.valid" type="submit">Submit</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h2>You submitted</h2>
+    <p>Name: {{model.name}}</p>
+    <p>Specie: {{model.specie}}</p>
+    <button (click)="submitted = false">Edit</button>
+</div>

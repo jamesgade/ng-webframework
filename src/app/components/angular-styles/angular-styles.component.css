@@ -1,0 +1,24 @@
+.component-style{
+    color: orange;
+}
+
+/* applied to the selector (eg: <app-angular-styles></app-angular-styles>) wherever it is called */
+:host{
+    display: block;
+    border: 2px solid black;
+}
+
+/* applied to the selector with class (eg: <app-angular-styles class="active"></app-angular-styles>) wherever it is called */
+:host(.active) {
+    border: 4px solid green;
+}
+
+/* applied to selector which is wrapped in a parent element with conditional class where the selector is called
+eg: <div class="theme-styles">
+        <app-angular-styles></app-angular-styles>
+    </div>
+*/
+:host-context(.theme-styles) p {
+    font-size: 22px;
+    background-color: gray;
+}
